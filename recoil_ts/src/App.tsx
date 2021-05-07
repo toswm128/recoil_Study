@@ -5,54 +5,23 @@ import {
   selector,
   useRecoilState,
   useRecoilValue,
+  useResetRecoilState,
 } from "recoil";
-import { textState } from "./Stores/inputStore";
-import { count } from "./Stores/inputStore";
 import { countText } from "./Stores/inputStore";
 import useInput from "./hooks/useInput/useInput";
 import useCounter from "./hooks/useCounter/useCounter";
+import { todos } from "./Stores/inputStore";
 
 function App() {
   const selector = useRecoilValue(countText);
+
+  const [todo, setTodo] = useRecoilState(todos);
   const text = useInput();
   const number = useCounter();
 
-  // const TextInput = () => {
-  //   const [text, setText] = useRecoilState(textState);
-
-  //   const onChange = (event: any) => {
-  //     setText(event.target.value);
-  //   };
-  //   return (
-  //     <div>
-  //       <input type="text" value={text} onChange={onChange} />
-  //       <div>{text}</div>
-  //     </div>
-  //   );
-  // };
-
-  // const CounterInput = () => {
-  //   // eslint-disable-next-line react-hooks/rules-of-hooks
-  //   const [counter, setCounter] = useRecoilState<number>(count);
-
-  //   const plus = () => {
-  //     setCounter(counter + 1);
-  //     console.log(selector);
-  //   };
-
-  //   const mines = () => {
-  //     setCounter(counter - 1);
-  //   };
-  //   return (
-  //     <div>
-  //       <div>{counter}</div>
-  //       <div>
-  //         <button onClick={plus}>+</button>
-  //         <button onClick={mines}>-</button>
-  //       </div>
-  //     </div>
-  //   );
-  // };
+  const submit = () => {
+    setTodo([...todo, text.value]);
+  };
 
   return (
     <RecoilRoot>
@@ -62,7 +31,13 @@ function App() {
         <button onClick={number.mines}>-</button>
       </div>
       <input type="text" {...text} />
+      <button onClick={submit}>제출</button>
       <p>{selector}</p>
+      <ul>
+        {todo.map(currnt => {
+          return <div>{currnt}</div>;
+        })}
+      </ul>
     </RecoilRoot>
   );
 }

@@ -17,3 +17,8 @@ export const countText = selector({
     return `count = ${get(count)} , text = ${get(textState)}`;
   },
 });
+
+export const todos = atom<Array<string>>({
+  key: "todos",
+  default: [],
+});
