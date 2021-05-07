@@ -3,15 +3,16 @@ import { useRecoilState } from "recoil";
 import { count } from "../../Stores/inputStore";
 
 const useInput = () => {
-  const [counter, setCounter] = useRecoilState(count);
+  const [value, setvalue] = useRecoilState(count);
 
   const plus = () => {
-    setCounter(counter + 1);
+    setvalue(value + 1);
   };
 
   const mines = () => {
-    setCounter(counter - 1);
+    setvalue(value - 1);
   };
+  return { value, plus, mines };
 };
 
 export default useInput;

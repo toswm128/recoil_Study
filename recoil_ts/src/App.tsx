@@ -7,11 +7,12 @@ import {
   useRecoilValue,
 } from "recoil";
 import { textState } from "./Stores/inputStore";
-import useInput from "./hooks/useInput/useInput";
-import useCounter from "./hooks/useCounter/useCounter";
+import { count } from "./Stores/inputStore";
+// import useInput from "./hooks/useInput/useInput";
+// import useCounter from "./hooks/useCounter/useCounter";
 
 function App() {
-  function TextInput() {
+  const TextInput = () => {
     const [text, setText] = useRecoilState(textState);
 
     const onChange = (event: any) => {
@@ -23,10 +24,32 @@ function App() {
         <div>{text}</div>
       </div>
     );
-  }
+  };
+
+  const CounterInput = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [counter, setCounter] = useRecoilState<number>(count);
+
+    const plus = () => {
+      setCounter(counter + 1);
+    };
+
+    const mines = () => {
+      setCounter(counter - 1);
+    };
+    return (
+      <div>
+        <div>{counter}</div>
+        <div>
+          <button onClick={plus}>+</button>
+          <button onClick={mines}>-</button>
+        </div>
+      </div>
+    );
+  };
   return (
     <RecoilRoot>
-      <div>aa</div>
+      <CounterInput />
       <TextInput />
     </RecoilRoot>
   );

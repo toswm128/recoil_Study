@@ -3,12 +3,12 @@ import { useRecoilState } from "recoil";
 import { textState } from "../../Stores/inputStore";
 
 const useInput = () => {
-  const [text, setText] = useRecoilState(textState);
+  const [value, setvalue] = useRecoilState(textState);
 
   const onChange = (event: any) => {
-    setText(event.target.value);
+    setvalue(event.target.value);
   };
-  return text;
+  return { value, onChange };
 };
 
 export default useInput;
