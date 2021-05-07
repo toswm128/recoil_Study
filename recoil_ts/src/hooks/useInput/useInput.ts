@@ -7,6 +7,7 @@ const useInput = () => {
 
   const onChange = (event: any) => {
     setvalue(event.target.value);
+    console.log(value);
   };
   return { value, onChange };
 };
