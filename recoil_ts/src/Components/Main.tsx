@@ -10,6 +10,7 @@ interface MainProps {
 }
 
 const Main = ({ selector, todo, text, number, submit }: MainProps) => {
+  console.log(number, text);
   return (
     <RecoilRoot>
       <div>
