@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { textState } from "../../Stores/inputStore";
 
 const useInput = () => {
-  const [value, setvalue] = useRecoilState(textState);
+  const [value, setvalue] = useRecoilState<string>(textState);
 
   const onChange = (event: any) => {
     setvalue(event.target.value);

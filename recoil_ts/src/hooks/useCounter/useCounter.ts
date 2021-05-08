@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { count } from "../../Stores/inputStore";
 
 const useInput = () => {
-  const [value, setvalue] = useRecoilState(count);
+  const [value, setvalue] = useRecoilState<number>(count);
 
   const plus = () => {
     setvalue(value + 1);

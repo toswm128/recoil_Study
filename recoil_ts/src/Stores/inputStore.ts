@@ -1,12 +1,12 @@
 import React from "react";
 import { atom, selector } from "recoil";
 
-export const textState = atom({
+export const textState = atom<string>({
   key: "textState", // unique ID (with respect to other atoms/selectors)
   default: "", // default value (aka initial value)
 });
 
-export const count = atom({
+export const count = atom<number>({
   key: "counter",
   default: 0,
 });

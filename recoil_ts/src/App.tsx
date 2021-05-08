@@ -11,6 +11,8 @@ import { countText } from "./Stores/inputStore";
 import useInput from "./hooks/useInput/useInput";
 import useCounter from "./hooks/useCounter/useCounter";
 import { todos } from "./Stores/inputStore";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MainPage from "./Pages/MainPage";
 
 function App() {
   const selector = useRecoilValue(countText);
@@ -25,7 +27,12 @@ function App() {
 
   return (
     <RecoilRoot>
-      <div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+        </Switch>
+      </Router>
+      {/* <div>
         <div>{number.value}</div>
         <button onClick={number.plus}>+</button>
         <button onClick={number.mines}>-</button>
@@ -34,10 +41,10 @@ function App() {
       <button onClick={submit}>제출</button>
       <p>{selector}</p>
       <ul>
-        {todo.map(currnt => {
-          return <div>{currnt}</div>;
+        {todo.map((currnt, key) => {
+          return <div key={key}>{currnt}</div>;
         })}
-      </ul>
+      </ul> */}
     </RecoilRoot>
   );
 }
