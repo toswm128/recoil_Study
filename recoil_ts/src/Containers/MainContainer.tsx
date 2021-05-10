@@ -3,7 +3,7 @@ import { countText } from "../Stores/inputStore";
 import { todos } from "../Stores/inputStore";
 import useInput from "../hooks/useInput/useInput";
 import useCounter from "../hooks/useCounter/useCounter";
-import Main from "../Components/Main";
+import Main from "../Components/Main/Main";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 const MainContainer = () => {

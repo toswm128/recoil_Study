@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Components/Header";
+import Header from "../Components/Header/Header";
 import { countText } from "../Stores/inputStore";
 import { todos } from "../Stores/inputStore";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 
 const HeaderConstainer = () => {
   const selector = useRecoilValue<String>(countText);

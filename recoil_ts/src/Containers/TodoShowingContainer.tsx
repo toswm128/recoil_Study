@@ -1,12 +1,12 @@
 import React from "react";
-import TodoShowing from "../Components/TodoShowing";
+import TodoShowing from "../Components/TodoShowing/TodoShowing";
 import { countText } from "../Stores/inputStore";
 import { todos } from "../Stores/inputStore";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 
 const TodoShowingContainer = () => {
   const selector = useRecoilValue<String>(countText);
-  const todo = useRecoilValue(todos);
+  const todo = useRecoilValue<Array<String>>(todos);
   console.log(selector, todo);
   return <TodoShowing selector={selector} todo={todo} />;
 };
