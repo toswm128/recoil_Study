@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 interface HeaderType {
   selector: object;
@@ -8,14 +9,13 @@ interface HeaderType {
 
 const Header = ({ selector, todo }: HeaderType) => {
   return (
-    <div>
-      <div>{}</div>
+    <div className="Header">
       <div>이름: {todo[todo.length - 1]}</div>
       <div>
-        <Link to="/show">아잉</Link>
+        <Link to="/">메인</Link>
       </div>
       <div>
-        <Link to="/">메인</Link>
+        <Link to="/show">아잉</Link>
       </div>
     </div>
   );
