@@ -5,7 +5,7 @@ import { todos } from "../Stores/inputStore";
 import { useRecoilValue } from "recoil";
 
 const HeaderConstainer = () => {
-  const selector = useRecoilValue<String>(countText);
+  const selector = useRecoilValue<object>(countText);
 
   const todo = useRecoilValue(todos);
   return <Header selector={selector} todo={todo} />;

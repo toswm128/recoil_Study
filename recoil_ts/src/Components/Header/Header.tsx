@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 interface HeaderType {
-  selector: String;
+  selector: object;
   todo: Array<String>;
 }
 
 const Header = ({ selector, todo }: HeaderType) => {
   return (
     <div>
-      <div>{selector}</div>
+      <div>{}</div>
       <div>이름: {todo[todo.length - 1]}</div>
       <div>
         <Link to="/show">아잉</Link>

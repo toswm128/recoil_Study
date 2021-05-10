@@ -7,7 +7,7 @@ import Main from "../Components/Main/Main";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 const MainContainer = () => {
-  const selector = useRecoilValue<String>(countText);
+  const selector = useRecoilValue<object>(countText);
 
   const [todo, setTodo] = useRecoilState(todos);
   const text: any = useInput();

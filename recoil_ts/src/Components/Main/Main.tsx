@@ -2,7 +2,7 @@ import React from "react";
 import { RecoilRoot } from "recoil";
 
 interface MainProps {
-  selector: String;
+  selector: object;
   todo: Array<String>;
   text: String;
   number: any;
@@ -20,7 +20,7 @@ const Main = ({ selector, todo, text, number, submit }: MainProps) => {
       </div>
       <input type="text" {...text} />
       <button onClick={submit}>제출</button>
-      <p>{selector}</p>
+      <p>{}</p>
       <ul>
         {todo.map((currnt, key) => {
           return <div key={key}>{currnt}</div>;

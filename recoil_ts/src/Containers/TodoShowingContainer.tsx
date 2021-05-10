@@ -5,7 +5,7 @@ import { todos } from "../Stores/inputStore";
 import { useRecoilValue } from "recoil";
 
 const TodoShowingContainer = () => {
-  const selector = useRecoilValue<String>(countText);
+  const selector = useRecoilValue<object>(countText);
   const todo = useRecoilValue<Array<String>>(todos);
   console.log(selector, todo);
   return <TodoShowing selector={selector} todo={todo} />;

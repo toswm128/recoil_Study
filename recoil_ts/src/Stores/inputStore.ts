@@ -14,7 +14,9 @@ export const count = atom<number>({
 export const countText = selector({
   key: "countText",
   get: ({ get }) => {
-    return `count = ${get(count)} , text = ${get(textState)}`;
+    const cnt = get(count);
+    const ts = get(textState);
+    return { cnt: cnt, ts: ts };
   },
 });
 
