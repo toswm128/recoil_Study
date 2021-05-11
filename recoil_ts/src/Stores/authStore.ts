@@ -10,3 +10,8 @@ export const pwd = atom<Array<string>>({
   key: "password",
   default: [],
 });
+
+export const user = atom<Array<object>>({
+  key: "user",
+  default: [],
+});
