@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { textState } from "../../Stores/inputStore";
 
 const useInput = () => {
-  const [value, setvalue] = useRecoilState<string>(textState);
+  const [value, setvalue] = useState<string>("");
 
   const onChange = (event: any) => {
     setvalue(event.target.value);

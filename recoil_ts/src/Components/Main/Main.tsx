@@ -12,7 +12,7 @@ interface MainProps {
 const Main = ({ selector, todo, text, number, submit }: MainProps) => {
   console.log(number, text);
   return (
-    <RecoilRoot>
+    <div>
       <div>
         <div>{number.value}</div>
         <button onClick={number.plus}>+</button>
@@ -26,7 +26,7 @@ const Main = ({ selector, todo, text, number, submit }: MainProps) => {
           return <div key={key}>{currnt}</div>;
         })}
       </ul>
-    </RecoilRoot>
+    </div>
   );
 };
 
