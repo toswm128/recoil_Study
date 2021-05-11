@@ -6,9 +6,10 @@ import "./TodoShowing.css";
 interface TodoType {
   selector: object;
   todo: Array<String>;
+  users: Array<any>;
 }
 
-const TodoShowing = ({ selector, todo }: TodoType) => {
+const TodoShowing = ({ selector, todo, users }: TodoType) => {
   console.log(selector);
   return (
     <div className="showing">
@@ -17,6 +18,24 @@ const TodoShowing = ({ selector, todo }: TodoType) => {
           {todo.map((current, key) => {
             return <div key={key}>{current}</div>;
           })}
+        </div>
+        <div className="showing-user">
+          <table>
+            <tr>
+              <th>아이디</th>
+              <th>비밀번호</th>
+              <th>이름</th>
+            </tr>
+            {users.map((current, key) => {
+              return (
+                <tr key={key}>
+                  <td>{current.id}</td>
+                  <td>{current.password}</td>
+                  <td>{current.name}</td>
+                </tr>
+              );
+            })}
+          </table>
         </div>
         <video autoPlay loop className="showing-video">
           <source

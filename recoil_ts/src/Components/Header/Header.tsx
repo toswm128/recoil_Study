@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 interface HeaderType {
-  selector: object;
+  selector: any;
   todo: Array<String>;
-  users: Array<any>;
-  userKey: any;
   login: Boolean;
+  info: Array<any>;
 }
 
-const Header = ({ selector, todo, users, userKey, login }: HeaderType) => {
+const Header = ({ selector, todo, login, info }: HeaderType) => {
   return (
     <div className="Header">
-      {console.log(login, userKey)}
       {!login ? (
         <>
           <div>
@@ -31,13 +29,14 @@ const Header = ({ selector, todo, users, userKey, login }: HeaderType) => {
         </>
       ) : (
         <>
-          <div>{users[userKey].name}</div>
           <div>
             <Link to="/">메인</Link>
           </div>
           <div>
             <Link to="/show">아잉</Link>
           </div>
+          <div>{info}</div>
+          <div>{selector.cnt}</div>
         </>
       )}
     </div>

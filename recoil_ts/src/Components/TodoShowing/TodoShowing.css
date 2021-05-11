@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.showing-user {
+  float: right;
+}
+
 .showing-video {
   width: 100%;
   position: absolute;
