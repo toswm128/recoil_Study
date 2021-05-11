@@ -1,12 +1,12 @@
 import React from "react";
 import { atom } from "recoil";
 
-export const id = atom<string>({
+export const id = atom<Array<string>>({
   key: "id",
-  default: "",
+  default: [],
 });
 
-export const pwd = atom<string>({
+export const pwd = atom<Array<string>>({
   key: "password",
-  default: "",
+  default: [],
 });

@@ -17,6 +17,9 @@ const Header = ({ selector, todo }: HeaderType) => {
       <div>
         <Link to="/show">아잉</Link>
       </div>
+      <div>
+        <Link to="/signup">회원가입</Link>
+      </div>
     </div>
   );
 };
