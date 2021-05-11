@@ -16,6 +16,13 @@ const LoginContainer = () => {
   const tryLogin = () => {
     //   const isLogin =
     console.log(userId);
+    userId.filter(user => {
+      if (user.id === id.value && user.password === pwd.value) {
+        console.log("t");
+      } else {
+        console.log("f");
+      }
+    });
   };
   return <Login id={id} pwd={pwd} tryLogin={tryLogin} />;
 };

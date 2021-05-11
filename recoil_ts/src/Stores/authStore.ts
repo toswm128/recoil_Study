@@ -11,7 +11,7 @@ export const pwd = atom<Array<string>>({
   default: [],
 });
 
-export const user = atom<Array<object>>({
+export const user = atom<Array<any>>({
   key: "user",
   default: [],
 });
