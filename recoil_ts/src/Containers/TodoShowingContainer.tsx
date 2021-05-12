@@ -7,7 +7,7 @@ import { useRecoilValue } from "recoil";
 
 const TodoShowingContainer = () => {
   const selector = useRecoilValue<object>(countText);
-  const todo = useRecoilValue<Array<String>>(todos);
+  const todo = useRecoilValue<Array<any>>(todos);
   const users = useRecoilValue<Array<any>>(user);
   return <TodoShowing selector={selector} todo={todo} users={users} />;
 };

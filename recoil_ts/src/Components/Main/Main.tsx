@@ -3,7 +3,7 @@ import { RecoilRoot } from "recoil";
 
 interface MainProps {
   selector: object;
-  todo: Array<String>;
+  todo: Array<any>;
   text: String;
   number: any;
   submit: any;
@@ -22,8 +22,12 @@ const Main = ({ selector, todo, text, number, submit }: MainProps) => {
       <button onClick={submit}>제출</button>
       <p>{}</p>
       <ul>
-        {todo.map((currnt, key) => {
-          return <div key={key}>{currnt}</div>;
+        {todo.map((current, key) => {
+          return (
+            <div key={key}>
+              {current.text} {current.name}
+            </div>
+          );
         })}
       </ul>
     </div>

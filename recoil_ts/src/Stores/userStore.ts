@@ -4,5 +4,5 @@ import { deflate } from "zlib";
 
 export const userInfo = atom<Array<any>>({
   key: "info",
-  default: [],
+  default: ["익명"],
 });

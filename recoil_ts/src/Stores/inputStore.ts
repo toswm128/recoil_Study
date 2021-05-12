@@ -20,7 +20,7 @@ export const countText = selector({
   },
 });
 
-export const todos = atom<Array<string>>({
+export const todos = atom<Array<any>>({
   key: "todos",
   default: [],
 });

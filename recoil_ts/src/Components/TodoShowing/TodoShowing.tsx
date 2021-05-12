@@ -5,7 +5,7 @@ import "./TodoShowing.css";
 
 interface TodoType {
   selector: object;
-  todo: Array<String>;
+  todo: Array<any>;
   users: Array<any>;
 }
 
@@ -16,7 +16,11 @@ const TodoShowing = ({ selector, todo, users }: TodoType) => {
       <div className="content">
         <div className="showing-item">
           {todo.map((current, key) => {
-            return <div key={key}>{current}</div>;
+            return (
+              <div key={key}>
+                {current.text} {current.name}
+              </div>
+            );
           })}
         </div>
         <div className="showing-user">
